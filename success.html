@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<link rel="stylesheet" href="/css/simplex-bootstrap.min.css">
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<title>Email successfully sent!</title>
+</head>
+<body>
+
+	<!-- Success Message -->
+	<div class="container" id="successmessage">
+		<div class="row">
+			<div class="col-md-12 text-center">
+	    		<h1>Your email has been sent successfully.</h1>
+	    		<h3>You will be redirected to the main site in <span id="countdown">5</span> seconds.</h3>
+	    		<h4>Thank you for your email! I will respond shortly.</h4>
+	    	</div>
+	    </div>
+    </div>
+
+</body>
+
+<script>
+
+	var count = 5;
+	var counter = setInterval(timer, 1000);
+
+	function timer() {
+		count = count - 1;
+		if (count <= 0) {
+			clearInterval(counter);
+			window.location="/";
+		};
+		document.getElementById("countdown").innerHTML = count;
+	};
+
+</script>
+
+</html>
